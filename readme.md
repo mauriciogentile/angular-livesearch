@@ -36,4 +36,4 @@ app.controller("MyController", function($scope, $http, $q, $window) {
 ```
 
 ### Example
-![Working...](/blob/master/example/oogle.gif)
+![Working...](/example/oogle.gif)
