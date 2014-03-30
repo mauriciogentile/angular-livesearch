@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '–g',
+1 verbose cli   'karma@0.8.7' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.19
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ '–g', null ]
+7 verbose cache add name=undefined spec="–g" args=["–g",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '–g',
+8 verbose parsed url   path: '–g',
+8 verbose parsed url   href: '–g' }
+9 verbose cache add [ 'karma@0.8.7', null ]
+10 verbose cache add name=undefined spec="karma@0.8.7" args=["karma@0.8.7",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'karma@0.8.7',
+11 verbose parsed url   path: 'karma@0.8.7',
+11 verbose parsed url   href: 'karma@0.8.7' }
+12 verbose cache add name="karma" spec="0.8.7" args=["karma","0.8.7"]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: '0.8.7',
+13 verbose parsed url   path: '0.8.7',
+13 verbose parsed url   href: '0.8.7' }
+14 verbose addNamed [ 'karma', '0.8.7' ]
+15 verbose addNamed [ '0.8.7', '0.8.7' ]
+16 silly lockFile 51e00793-g –g
+17 verbose lock –g C:\Users\mauri\AppData\Roaming\npm-cache\51e00793-g.lock
+18 silly lockFile 8c5aa126-karma-0-8-7 karma@0.8.7
+19 verbose lock karma@0.8.7 C:\Users\mauri\AppData\Roaming\npm-cache\8c5aa126-karma-0-8-7.lock
+20 silly lockFile 51e00793-g –g
+21 silly lockFile 51e00793-g –g
+22 verbose addNamed [ '–g', '' ]
+23 verbose addNamed [ null, '*' ]
+24 silly lockFile 72e0e7f9-g –g@
+25 verbose lock –g@ C:\Users\mauri\AppData\Roaming\npm-cache\72e0e7f9-g.lock
+26 verbose registry.get karma/0.8.7 not expired, no request
+27 silly addNameRange { name: '–g', range: '*', hasData: false }
+28 verbose url raw –g
+29 verbose url resolving [ 'https://registry.npmjs.org/', './%E2%80%93g' ]
+30 verbose url resolved https://registry.npmjs.org/%E2%80%93g
+31 info trying registry request attempt 1 at 00:17:04
+32 http GET https://registry.npmjs.org/%E2%80%93g
+33 silly lockFile 8c5aa126-karma-0-8-7 karma@0.8.7
+34 silly lockFile 8c5aa126-karma-0-8-7 karma@0.8.7
+35 http 404 https://registry.npmjs.org/%E2%80%93g
+36 silly registry.get cb [ 404,
+36 silly registry.get   { date: 'Fri, 21 Mar 2014 04:17:07 GMT',
+36 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B)',
+36 silly registry.get     'content-type': 'application/json',
+36 silly registry.get     via: '1.1 varnish',
+36 silly registry.get     'cache-control': 'max-age=0',
+36 silly registry.get     'content-length': '52',
+36 silly registry.get     'accept-ranges': 'bytes',
+36 silly registry.get     age: '0',
+36 silly registry.get     'x-served-by': 'cache-v41-ASH, cache-jfk1021-JFK',
+36 silly registry.get     'x-cache': 'MISS, MISS',
+36 silly registry.get     'x-cache-hits': '0, 0',
+36 silly registry.get     'x-timer': 'S1395375427.180256844,VS0,VS-507,VE-425,VE89',
+36 silly registry.get     'keep-alive': 'timeout=10, max=50',
+36 silly registry.get     connection: 'Keep-Alive' } ]
+37 silly lockFile 72e0e7f9-g –g@
+38 silly lockFile 72e0e7f9-g –g@
+39 error 404 '%E2%80%93g' is not in the npm registry.
+39 error 404 You should bug the author to publish it
+39 error 404
+39 error 404 Note that you can also install from a
+39 error 404 tarball, folder, or http url, or git url.
+40 error System Windows_NT 6.1.7601
+41 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "–g" "karma@0.8.7"
+42 error cwd D:\Git\justeat\src\tests\scripts
+43 error node -v v0.10.19
+44 error npm -v 1.3.11
+45 error code E404
+46 verbose exit [ 1, true ]

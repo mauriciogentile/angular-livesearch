@@ -1,0 +1,172 @@
+{
+    "Details": [
+        {
+            "Id": 32596,
+            "Name": "Seema Tandoori",
+            "Address": {
+                "FirstLine": "41 Farringdon Street",
+                "City": "London",
+                "Postcode": "EC4A 4AN",
+                "Longitude": -0.104718,
+                "Latitude": 51.516948
+            },
+            "Description": "Seema Tandoori is a takeaway located on Farringdon Street in London. Indian food is delivered to your door when ordered online at Just-Eat.co.uk.  There is a wide variety of dishes on this menu from Starters to Biryani and Vegetable Dishes too. If you are entertaining and not sure what to order browse through the menu and check out the Chef’s Recommendations for something a bit different such as Chicken Bayang or Salmon Delight.  Also on the menu you will find Traditional Curries and the ever popular Tandoori Dishes plus much more including Bread and Rice to top up your takeaway.  ",
+            "Cuisines": [
+                {
+                    "Id": 31,
+                    "Rank": 1,
+                    "Name": "Indian",
+                    "SeoName": "indian"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/32596.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        },
+        {
+            "Id": 32428,
+            "Name": "Masala Dubba",
+            "Address": {
+                "FirstLine": "6 Trinity Street",
+                "City": "London",
+                "Postcode": "SE1 1DB",
+                "Longitude": -0.095139,
+                "Latitude": 51.499536
+            },
+            "Description": "Masala Dubba is a takeaway located on Trinity Street in London. They deliver many of your favourite Indian Dishes straight to your door when you order online through Just-Eat.co.uk. Welcome to Masala Dubba the takeaway where you can choose from a variety of dishes. You can order Classic, Fish & Prawn and Healthy Dishes too. Perhaps you fancy a Chef’s Special offering dishes such as Murgh Masala, Chops Karai or the ever popular Lamb Shank slowly braised until tender in ginger & garlic with a subtle hint of ground roasted spices. Top up your takeaway with Rice, Bread and Extra’s. ",
+            "Cuisines": [
+                {
+                    "Id": 31,
+                    "Rank": 1,
+                    "Name": "Indian",
+                    "SeoName": "indian"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/32428.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        },
+        {
+            "Id": 21651,
+            "Name": "L'Antipasto City (Italian, Pizza & Pasta)",
+            "Address": {
+                "FirstLine": "2-4 Botolph Alley",
+                "City": "London",
+                "Postcode": "EC3R 8DR",
+                "Longitude": -0.084378,
+                "Latitude": 51.510151
+            },
+            "Description": "Welcome to the L Antipasto City",
+            "Cuisines": [
+                {
+                    "Id": 27,
+                    "Rank": 1,
+                    "Name": "Italian",
+                    "SeoName": "italian"
+                },
+                {
+                    "Id": 82,
+                    "Rank": 2,
+                    "Name": "Pizza",
+                    "SeoName": "pizza"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/21651.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        },
+        {
+            "Id": 4344,
+            "Name": "Shahi Tandoori",
+            "Address": {
+                "FirstLine": "77 Grange Road",
+                "City": "Bermondsey",
+                "Postcode": "SE1 3BW",
+                "Longitude": -0.076065,
+                "Latitude": 51.494377
+            },
+            "Description": "We have been serving delicious Bangladeshi and Indian cuisine delivered straight to your door since 1989, based in Bermondsey London. With over 20 year’s experience, we have established ourselves as a firm local favourite amongst our customers, providing exquisite food & excellent service. Enjoy the taste of Bangladesh and India in the comfort of your own home. Please order with us and relax while we prepare your meal with fresh ingredients.     We provide quality food with efficient service  recommended by many people.  You Order… We Deliver… You Enjoy!",
+            "Cuisines": [
+                {
+                    "Id": 31,
+                    "Rank": 1,
+                    "Name": "Indian",
+                    "SeoName": "indian"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/4344.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        },
+        {
+            "Id": 6682,
+            "Name": "Curry Express",
+            "Address": {
+                "FirstLine": "132 Weston Street",
+                "City": "London",
+                "Postcode": "SE1 4XE",
+                "Longitude": -0.086149,
+                "Latitude": 51.499182
+            },
+            "Description": "Curry Express is located on Weston Street in London. SUPERB food is delivered straight to your door when you order online with Just-Eat.co.uk. Welcome to Curry Express an Indian Takeaway with a touch of Class and Home Delivery too. Order your favourite dish tonight from Curry Express or be adventurous and go for something different such as a Chef’s Special the Nawabi perhaps. Do you fancy a Traditional Curry or a Jalfrezi then look no further they have it all.  To accompany your meal they have a big selection of Sundries such as Rice and Naan Bread.  Curry Express hopes you enjoy your takeaway and look forward to serving you again and again. Opening times are Monday to Sunday from 17:30 to 23:00. Delivery is FREE with a minimum order of £8.00, below delivery is not available. ",
+            "Cuisines": [
+                {
+                    "Id": 31,
+                    "Rank": 1,
+                    "Name": "Indian",
+                    "SeoName": "indian"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/6682.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        },
+        {
+            "Id": 29708,
+            "Name": "Toulouse Lautrec",
+            "Address": {
+                "FirstLine": "140 Newington Butts",
+                "City": "London",
+                "Postcode": "SE11 4RN",
+                "Longitude": -0.103707,
+                "Latitude": 51.49097
+            },
+            "Description": "Welcome to Toulouse Lautrec-SE11 London",
+            "Cuisines": [
+                {
+                    "Id": 24,
+                    "Rank": 1,
+                    "Name": "French",
+                    "SeoName": "french"
+                },
+                {
+                    "Id": 2,
+                    "Rank": 2,
+                    "Name": "English",
+                    "SeoName": "english"
+                }
+            ],
+            "LogoUrl": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/29708.gif",
+            "ratings": {
+                "value": 4.5,
+                "number": 10
+            },
+            "distance": "1 mile"
+        }
+    ]
+}
