@@ -1,8 +1,7 @@
 'use strict';
 
-var liveSearch = angular.module("LiveSearch", ["ng"]);
-
-liveSearch.directive("liveSearch", function ($compile, $timeout) {
+angular.module("LiveSearch", ["ng"])
+ .directive("liveSearch", function ($compile, $timeout) {
     return {
         restrict: 'E',
         replace: true,
