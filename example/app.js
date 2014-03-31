@@ -1,7 +1,8 @@
 var app = angular.module("MyApp", ["LiveSearch"]);
 app.controller("MyController", function($scope, $http, $q, $window) {
-    $scope.search1 = "";
-    $scope.search2 = "";
+    
+    $scope.mySearch = "";
+    
     $scope.mySearchCallback = function(params) {
 
       var defer = $q.defer();

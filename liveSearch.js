@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module("LiveSearch", ["ng"])
- .directive("liveSearch", function ($compile, $timeout) {
+ .directive("liveSearch", ["$compile", "$timeout", function ($compile, $timeout) {
     return {
         restrict: 'E',
         replace: true,
@@ -133,4 +133,4 @@ angular.module("LiveSearch", ["ng"])
             document.body.appendChild(searchPopup[0]);
         }
     };
-});
+}]);

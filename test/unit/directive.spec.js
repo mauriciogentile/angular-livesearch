@@ -9,9 +9,6 @@ describe('LiveSearch unit tests', function() {
         scope = $rootScope;
         q = $q;
         timeout = $timeout;
-        _window = {
-            alert: function(msg) {}
-        };
 
         scope.mySearchCallback = function () {
             var defer = $q.defer();
@@ -21,6 +18,8 @@ describe('LiveSearch unit tests', function() {
             ]);
             return defer.promise;
         };
+
+        scope.search1 = "";
 
         element = angular.element('<div><live-search id="search1" live-search-callback="mySearchCallback" live-search-display-property="city" live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>" live-search-select="fullName" ng-model="search1" ></live-search></div>');
         $compile(element)(scope);
@@ -33,18 +32,30 @@ describe('LiveSearch unit tests', function() {
     });
 
     it('should replace live-search tag by input text', function() {
-        expect(element.find("input").length).toBe(1);
-        expect(element.find("input")[0].attributes["type"]).toBeDefined();
-        expect(element.find("input")[0].attributes["type"].value).toBe("text");
+        var input = element.find("input");
+        expect(input.length).toBe(1);
+        expect(input.attr("type")).toBeDefined();
+        expect(input.attr("type")).toBe("text");
     });
+
+    it('should bind value to ngModel if present', function() {
+        scope.$apply(function() {
+            scope.search1 = "something"
+        });
+
+        var input = element.find("input");
+        expect(scope.search1).toBe(input.val());
+    });
+
 
     it('should add key handlers to the input element', function() {
         var input = element.find("input")[0];
+        
         expect(input.onkeydown).toBeDefined();
         expect(input.onkeyup).toBeDefined();
     });
 
-    it('should add <ul> tag for results', function() {
+    it('should add invisble <ul> tag for results', function() {
         expect(angular.element(document).find("ul").length).toBe(1);
     });
 
@@ -100,6 +111,7 @@ describe('LiveSearch unit tests', function() {
         input[0].onkeyup({keyCode : "any"});
         timeout.flush();
         input[0].onkeydown({keyCode : 40});
+        
         expect(angular.element(ul.find("li")[0]).hasClass("selected")).toBe(true);
     });
 
@@ -110,7 +122,7 @@ describe('LiveSearch unit tests', function() {
         timeout.flush();
         var li = angular.element(document.body).find("li");
         input[0].onkeydown({keyCode : 38});
-        console.log(li[1].outerHTML);
+        
         expect(angular.element(li[0]).hasClass("selected")).toBe(true);
     });
 });

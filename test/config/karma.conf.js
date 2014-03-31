@@ -2,16 +2,16 @@
 // Generated on Wed Mar 12 2014 14:17:25 GMT-0400 (Eastern Daylight Time)
 
 // base path, that will be used to resolve files and exclude
-basePath = "../";
+basePath = "../../";
 
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  "../lib/angular.js",
-  "lib/angular/angular-mocks.js",
-  "../liveSearch.js",
-  "unit/*.spec.js"
+  "lib/angular.js",
+  "test/lib/angular/angular-mocks.js",
+  "liveSearch.js",
+  "test/unit/*.spec.js"
 ];
 
 // list of files to exclude
