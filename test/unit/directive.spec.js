@@ -1,6 +1,4 @@
-'use strict';
-
-describe('LiveSearch unit tests', function() {
+describe('liveSearch directive', function() {
     var scope, liveSearch, _window, q, element, timeout;
 
     beforeEach(module('LiveSearch'));
@@ -21,14 +19,20 @@ describe('LiveSearch unit tests', function() {
 
         scope.search1 = "";
 
-        element = angular.element('<div><live-search id="search1" live-search-callback="mySearchCallback" live-search-display-property="city" live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>" live-search-select="fullName" ng-model="search1" ></live-search></div>');
+        element = angular.element(
+            '<div id="test-live-search">' +
+               '<live-search id="search1" live-search-callback="mySearchCallback" live-search-display-property="city" ' +
+                 'live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>" ' +
+                 'live-search-select="fullName" ng-model="search1" >' +
+               '</live-search>' +
+            '</div>');
         $compile(element)(scope);
         scope.$digest();
     }));
 
     //cleanup DOM after
     afterEach(function() {
-        angular.element(document.body).empty();
+        document.getElementsByClassName("searchresultspopup").remove();
     });
 
     it('should replace live-search tag by input text', function() {
@@ -56,14 +60,14 @@ describe('LiveSearch unit tests', function() {
     });
 
     it('should add invisble <ul> tag for results', function() {
-        expect(angular.element(document).find("ul").length).toBe(1);
+        expect(document.getElementsByClassName("searchresultspopup").length).toBe(1);
     });
 
     it('should invoke search callback with search entry when key is up', function() {
 
         var input = angular.element(element.find("input")[0]);
         var defer = q.defer();
-        spyOn(scope, "mySearchCallback").andReturn(defer.promise);
+        spyOn(scope, "mySearchCallback").and.returnValue(defer.promise);
         defer.resolve([]);
 
         input.val("fiji");
@@ -78,7 +82,7 @@ describe('LiveSearch unit tests', function() {
 
     it('should not invoke search callback if input length is less than 3', function() {
         var defer = q.defer();
-        spyOn(scope, "mySearchCallback").andReturn(defer.promise);
+        spyOn(scope, "mySearchCallback").and.returnValue(defer.promise);
         defer.resolve([]);
 
         var input = angular.element(element.find("input")[0]);
@@ -100,12 +104,12 @@ describe('LiveSearch unit tests', function() {
 
         timeout.flush();
 
-        expect(angular.element(document).find("ul").children().length).toBe(2);
+        expect(angular.element(document.getElementsByClassName("searchresultspopup")).children().length).toBe(2);
     });
 
     it('should select the first element when keydown', function() {
         var input = angular.element(element.find("input")[0]);
-        var ul = angular.element(document.body).find("ul")[0];
+        var ul = document.getElementsByClassName("searchresultspopup")[0];
         ul = angular.element(ul);
         input.val("fiji");
         input[0].onkeyup({keyCode : "any"});
@@ -120,7 +124,7 @@ describe('LiveSearch unit tests', function() {
         input.val("fiji");
         input[0].onkeyup({keyCode : "any"});
         timeout.flush();
-        var li = angular.element(document.body).find("li");
+        var li = angular.element(document.getElementsByClassName("searchresultspopup")).find("li");
         input[0].onkeydown({keyCode : 38});
         
         expect(angular.element(li[0]).hasClass("selected")).toBe(true);
