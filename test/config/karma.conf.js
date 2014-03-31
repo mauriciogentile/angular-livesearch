@@ -8,8 +8,10 @@ basePath = "../../";
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  "lib/angular.js",
+  "test/lib/angular/angular.js",
   "test/lib/angular/angular-mocks.js",
+  "test/lib/jasmine/jasmine.js",
+  "test/lib/helper.js",
   "liveSearch.js",
   "test/unit/*.spec.js"
 ];
