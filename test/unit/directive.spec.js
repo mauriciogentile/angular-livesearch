@@ -22,22 +22,24 @@ describe('LiveSearch unit tests', function() {
             return defer.promise;
         };
 
-        element = angular.element('<div><live-search id="search1" type="text" live-search-callback="mySearchCallback" live-search-display-property="city" live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>" live-search-select="fullName" ng-model="search1" ></live-search></div>');
+        element = angular.element('<div><live-search id="search1" live-search-callback="mySearchCallback" live-search-display-property="city" live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>" live-search-select="fullName" ng-model="search1" ></live-search></div>');
         $compile(element)(scope);
         scope.$digest();
     }));
 
+    //cleanup DOM after
     afterEach(function() {
         angular.element(document.body).empty();
     });
 
-    it('should replace live-search tag by input', function() {
+    it('should replace live-search tag by input text', function() {
         expect(element.find("input").length).toBe(1);
+        expect(element.find("input")[0].attributes["type"]).toBeDefined();
+        expect(element.find("input")[0].attributes["type"].value).toBe("text");
     });
 
     it('should add key handlers to the input element', function() {
         var input = element.find("input")[0];
-        //debugger;
         expect(input.onkeydown).toBeDefined();
         expect(input.onkeyup).toBeDefined();
     });
@@ -46,13 +48,13 @@ describe('LiveSearch unit tests', function() {
         expect(angular.element(document).find("ul").length).toBe(1);
     });
 
-    it('should call calback with search entry', function() {
+    it('should invoke search callback with search entry when key is up', function() {
 
         var input = angular.element(element.find("input")[0]);
         var defer = q.defer();
         spyOn(scope, "mySearchCallback").andReturn(defer.promise);
         defer.resolve([]);
-        //debugger;
+
         input.val("fiji");
         scope.$apply(function() {
             input[0].onkeyup({keyCode : "any"});
@@ -63,9 +65,23 @@ describe('LiveSearch unit tests', function() {
         expect(scope.mySearchCallback).toHaveBeenCalledWith({ query: input.val() });
     });
 
+    it('should not invoke search callback if input length is less than 3', function() {
+        var defer = q.defer();
+        spyOn(scope, "mySearchCallback").andReturn(defer.promise);
+        defer.resolve([]);
+
+        var input = angular.element(element.find("input")[0]);
+
+        input.val("fi");
+        input[0].onkeyup({keyCode : "any"});
+
+        timeout.flush();
+
+        expect(scope.mySearchCallback).not.toHaveBeenCalled();
+    });
+
     it('should have as many results as items in the search result', function() {
         var input = angular.element(element.find("input")[0]);
-        //debugger;
         input.val("fiji");
         scope.$apply(function() {
             input[0].onkeyup({keyCode : "any"});
@@ -76,11 +92,10 @@ describe('LiveSearch unit tests', function() {
         expect(angular.element(document).find("ul").children().length).toBe(2);
     });
 
-    it('should select first element when keydown', function() {
+    it('should select the first element when keydown', function() {
         var input = angular.element(element.find("input")[0]);
         var ul = angular.element(document.body).find("ul")[0];
         ul = angular.element(ul);
-        //debugger;
         input.val("fiji");
         input[0].onkeyup({keyCode : "any"});
         timeout.flush();
@@ -88,9 +103,8 @@ describe('LiveSearch unit tests', function() {
         expect(angular.element(ul.find("li")[0]).hasClass("selected")).toBe(true);
     });
 
-    it('should select last element when keyup', function() {
+    it('should select the last element when keyup', function() {
         var input = angular.element(element.find("input")[0]);
-        //debugger;
         input.val("fiji");
         input[0].onkeyup({keyCode : "any"});
         timeout.flush();
