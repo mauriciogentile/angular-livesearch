@@ -9,7 +9,6 @@ angular-live-search
 <div ng-controller='MyController'>
 <live-search id="search1" type="text"
   live-search-callback="mySearchCallback"
-  live-search-display-property="city"
   live-search-item-template="{{result.city}}<strong>{{result.state}}</strong><b>{{result.country}}</b>"
   live-search-select="fullName"
   ng-model="search1" ></live-search>
