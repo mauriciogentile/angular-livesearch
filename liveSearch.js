@@ -39,6 +39,9 @@ angular.module("LiveSearch", ["ng"])
                         element.val(item);
                     }
                 }
+                if ('undefined' !== element.controller('ngModel')) {
+                    element.controller('ngModel').$setViewValue(element.val());
+                }
             });
 
             scope.$watch("visible", function(newValue, oldValue) {
