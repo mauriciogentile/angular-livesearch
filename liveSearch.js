@@ -131,7 +131,7 @@ angular.module("LiveSearch", ["ng"])
             };
 
             var itemTemplate = element.attr("live-search-item-template") || "{{result}}";
-            var template = "<ul ng-show='visible' style='top:{{top}}px;left:{{left}}px;width:{{width}}' class='searchresultspopup'><li ng-class=\"{ 'selected' : isSelected($index) }\" ng-click='select($index)' ng-repeat='result in results'>" + itemTemplate + "</li></ul>";
+            var template = "<ul ng-show='visible' style='top:{{top}}px;left:{{left}}px;width:{{width}}px;' class='searchresultspopup'><li ng-class=\"{ 'selected' : isSelected($index) }\" ng-click='select($index)' ng-repeat='result in results'>" + itemTemplate + "</li></ul>";
             var searchPopup = $compile(template)(scope);
             document.body.appendChild(searchPopup[0]);
         }
