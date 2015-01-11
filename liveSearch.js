@@ -45,13 +45,13 @@ angular.module("LiveSearch", ["ng"])
             });
 
             scope.$watch("visible", function(newValue, oldValue) {
-                if(newValue == false) {
+                if(newValue === false) {
                     return;
                 }
                 scope.width = element[0].clientWidth;
                 var offset = getPosition(element[0]);
-                scope.top = offset.y + element[0].clientHeight + 1;
-                scope.left = offset.x;
+                scope.top = offset.y + element[0].clientHeight + 1 + 'px';
+                scope.left = offset.x + 'px';
             });
 
             element[0].onkeydown = function (e) {
@@ -66,7 +66,7 @@ angular.module("LiveSearch", ["ng"])
                 }
                 //keyup
                 else if (e.keyCode == 38) {
-                    if(scope.selectedIndex == 0) {
+                    if(scope.selectedIndex === 0) {
                         scope.selectedIndex = scope.results.length - 1;    
                     }
                     else if(scope.selectedIndex == -1) {
@@ -131,7 +131,7 @@ angular.module("LiveSearch", ["ng"])
             };
 
             var itemTemplate = element.attr("live-search-item-template") || "{{result}}";
-            var template = "<ul ng-show='visible' style='top:{{top}}px;left:{{left}}px;width:{{width}}px;' class='searchresultspopup'><li ng-class=\"{ 'selected' : isSelected($index) }\" ng-click='select($index)' ng-repeat='result in results'>" + itemTemplate + "</li></ul>";
+            var template = "<ul ng-show='visible' ng-style=\"{'top':top,'left':left,'width':width}\" class='searchresultspopup'><li ng-class=\"{ 'selected' : isSelected($index) }\" ng-click='select($index)' ng-repeat='result in results'>" + itemTemplate + "</li></ul>";
             var searchPopup = $compile(template)(scope);
             document.body.appendChild(searchPopup[0]);
         }
