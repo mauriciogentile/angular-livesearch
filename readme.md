@@ -35,6 +35,6 @@ app.controller("MyController", function($scope, $http, $q, $window) {
 ```
 
 ### Example
-[Demo on Plunker](http://plnkr.co/edit/GvYeTUOCgOV73UwSaqFj)
+[Demo on Plunker](http://plnkr.co/edit/ad3Sq9)
 
 ![Working...](/example/oogle.gif)
