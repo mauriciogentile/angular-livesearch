@@ -10,7 +10,8 @@ angular.module("LiveSearch", ["ng"])
             liveSearchSelect: '=?',
             liveSearchItemTemplate: '@',
             liveSearchWaitTimeout: '=?',
-            liveSearchMaxResultSize: '=?'
+            liveSearchMaxResultSize: '=?',
+            liveSearchMinlength: '=?'
         },
         template: "<input type='text' />",
         link: function (scope, element, attrs, controller) {
@@ -67,7 +68,7 @@ angular.module("LiveSearch", ["ng"])
                 //keyup
                 else if (e.keyCode == 38) {
                     if(scope.selectedIndex === 0) {
-                        scope.selectedIndex = scope.results.length - 1;    
+                        scope.selectedIndex = scope.results.length - 1;
                     }
                     else if(scope.selectedIndex == -1) {
                         scope.selectedIndex = 0;
@@ -94,7 +95,7 @@ angular.module("LiveSearch", ["ng"])
                 var vals = target.val().split(",");
                 var search_string = vals[vals.length - 1].trim();
                 // Do Search
-                if (search_string.length < 3 || search_string.length > 9) {
+                if (search_string.length < (scope.liveSearchMinlength || 3) || search_string.length > 9) {
                     scope.visible = false;
                     //unmanaged code needs to force apply
                     scope.$apply();
@@ -106,8 +107,8 @@ angular.module("LiveSearch", ["ng"])
                     promise.then(function (dataArray) {
                         if (dataArray) {
                             results = dataArray.slice(0, (scope.liveSearchMaxResultSize || 20) - 1);
+                            scope.visible = true;
                         }
-                        scope.visible = true;
                     });
                     promise.finally(function() {
                         scope.selectedIndex = -1;
@@ -121,7 +122,7 @@ angular.module("LiveSearch", ["ng"])
             var getPosition = function (element) {
                 var xPosition = 0;
                 var yPosition = 0;
-              
+
                 while (element) {
                     xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
                     yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
