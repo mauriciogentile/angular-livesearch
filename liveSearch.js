@@ -8,6 +8,7 @@ angular.module("LiveSearch", ["ng"])
         scope: {
             liveSearchCallback: '=',
             liveSearchSelect: '=?',
+            liveSearchSelectCallback: '=',
             liveSearchItemTemplate: '@',
             liveSearchWaitTimeout: '=?',
             liveSearchMaxResultSize: '=?'
@@ -32,11 +33,17 @@ angular.module("LiveSearch", ["ng"])
             scope.$watch("selectedIndex", function(newValue, oldValue) {
                 var item = scope.results[newValue];
                 if(item) {
-                    if(attrs.liveSearchSelect) {
-                        element.val(item[attrs.liveSearchSelect]);
+                    if(attrs.liveSearchSelectCallback) {
+                        var value = scope.liveSearchSelectCallback.call(null, {items: scope.results, item: item});
+                        element.val(value);
                     }
                     else {
-                        element.val(item);
+                        if (attrs.liveSearchSelect) {
+                            element.val(item[attrs.liveSearchSelect]);
+                        }
+                        else {
+                            element.val(item);
+                        }
                     }
                 }
                 if ('undefined' !== element.controller('ngModel')) {
