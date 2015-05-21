@@ -11,7 +11,8 @@ angular.module("LiveSearch", ["ng"])
             liveSearchSelectCallback: '=',
             liveSearchItemTemplate: '@',
             liveSearchWaitTimeout: '=?',
-            liveSearchMaxResultSize: '=?'
+            liveSearchMaxResultSize: '=?',
+            liveSearchMaxlength: '=?'
         },
         template: "<input type='text' />",
         link: function (scope, element, attrs, controller) {
@@ -101,7 +102,8 @@ angular.module("LiveSearch", ["ng"])
                 var vals = target.val().split(",");
                 var search_string = vals[vals.length - 1].trim();
                 // Do Search
-                if (search_string.length < 3 || search_string.length > 9) {
+                if (search_string.length < 3 ||
+                    (scope.liveSearchMaxlength !== null && search_string.length > scope.liveSearchMaxlength)) {
                     scope.visible = false;
                     //unmanaged code needs to force apply
                     scope.$apply();
