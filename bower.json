@@ -1,8 +1,9 @@
 {
   "name": "angular-livesearch",
+  "version": "0.2.0",
   "homepage": "https://github.com/ScottieR/angular-livesearch",
   "authors": [
-    "Mauricio Gentile <gentilemauricio@gmail.com>"
+    "Mauricio Gentile <gentilemauricio@gmail.com>",
     "Scottie Ryan <scottie.g.ryan@gmail.com>"
   ],
   "description": "Easy autocomplete for angular, supporting AJAX data loading and templates",
@@ -14,5 +15,8 @@
     "live",
     "search"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "test"
+  ]
 }
