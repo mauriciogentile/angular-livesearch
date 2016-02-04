@@ -33,7 +33,7 @@ ul.searchresultspopup {
 	margin-top: 0px;
 	padding: 0px;
 	z-index: 99999!important;
-	position: fixed;
+	position: absolute;
 	background-color: white;
 	/*max-height:200px;*/
 	border-collapse: separate;
