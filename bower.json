@@ -7,7 +7,10 @@
     "Scottie Ryan <scottie.g.ryan@gmail.com>"
   ],
   "description": "Easy autocomplete for angular, supporting AJAX data loading and templates",
-  "main": "liveSearch.min.js, liveSearch.min.css",
+  "main": [
+    "liveSearch.min.js",
+    "liveSearch.min.css"
+  ],
   "moduleType": [],
   "keywords": [
     "autocomplete",
